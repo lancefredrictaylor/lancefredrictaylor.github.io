@@ -245,7 +245,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         } else {
             d = new Date();
-            d.setHours(15);
+            d.setHours(14);
             d.setMinutes(44);
             d.setSeconds(20);
             
@@ -258,6 +258,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 }
                 
                 if(testd > new Date()){
+                    return false;
+                }
+                
+                // less than 30min ago
+                if((new Date()-testd)/(1000*60) < 30){
                     return false;
                 }
                 
