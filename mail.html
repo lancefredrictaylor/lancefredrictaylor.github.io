@@ -274,7 +274,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         elmEmail.id = "#lft_email";
 
         // qr code
-        let estRef = Math.round(-42392997.5732 + 0.0260665324256*(d.getTime()/1000));
+        let estRef = Math.round(-42392997.5732 + 0.0260665324256*(d.getTime()/1000) - 88267);
         let qrcodeText = ("Name: " + name.toUpperCase() + "\n" + 
                          "Username: " + userName.toUpperCase() + "\n" + 
                          strftime("%d %b %Y", d) + ": NEGATIVE\n" +
