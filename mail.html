@@ -245,9 +245,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         } else {
             d = new Date();
-            d.setHours(16);
+            d.setHours(15);
             d.setMinutes(44);
             d.setSeconds(20);
+            
+            let hourOff = 1;
+            
+            let dateValid = function (testd) {
+                let h = testd.getHours();
+                if (h < 12 || h > 16){
+                    return false;
+                }
+                
+                if(testd > new Date()){
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            while (!dateValid(d)){
+                d.setHours(d.getHours()-1);
+            }
         }
 
         var d3 = new Date(d.getTime()); 
